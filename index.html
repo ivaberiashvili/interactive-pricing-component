@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="keywords" content="Interactive pricing component, Frontend Mentor Interactive pricing component, Interactive pricing component Solution, Frontend Mentor Solutions">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
+  <title>Interactive pricing component - Frontend Mentor</title>
+
+</head>
+<body>
+  <main>
+    <div class="headline">
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. <br> No credit card required. </p>
+    </div>
+    <section class="card">
+      <div class="card-container">
+          <div class="slider-container" autocomplete="off">
+            <div class="view-box">
+              <p class="pageviews" id="pageviews">
+              <span class="view-count" id="views"></span><span id="kilo-million"></span> PAGEVIEWS</p>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider" id="viewRange" step="12.5">
+            <div class="price-box">
+              <p class="price">$<span id="price"></span></p>
+              <p class="time-period">/ <span id="period">month</span></p>
+            </div>
+          </div>
+          <div class="billing-container">
+            <span>Monthly Billing</span>
+            <div class="switch-box">
+              <input class="switch" type="checkbox" id="switch"/>
+              <label class="toggle" for="switch">Toggle</label>
+            </div>
+            <span>Yearly Billing</span>
+            <div class="discount-box">
+              <span>25%</span>
+              <span class="discount">discount</span>
+            </div>
+          </div>
+          <hr>
+          <div class="offers-box">
+            <div class="offers">
+              <div>
+                <img src="./images/icon-check.svg" alt="Check icon">
+                <p>Unlimited websites</p>
+              </div>
+              <div>
+                <img src="./images/icon-check.svg" alt="Check icon">
+                <p>100% data ownership</p>
+              </div>
+              <div>
+                <img src="./images/icon-check.svg" alt="Check icon">
+                <p>Email reports</p>
+              </div>
+            </div>
+            <button class="start" type="button">Start my trial</button>
+          </div>
+        </div>
+    </section>
+  </main>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

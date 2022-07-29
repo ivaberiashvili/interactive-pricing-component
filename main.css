@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+
+:root{
+    --light:#848EAD;
+    --dark:#293356;
+    --sky:#BECDFF;
+    --light-green:#A4F3EB;
+    --green:#10D8C4;
+    --dark-green:#24AEA1;
+    --green-hover:#7AEADF;
+    --light-peach:#FEEDE8;
+    --peach:#FF8D68;
+    --card-shadow: 0px 20px 30px -5px #7F89B927;
+    --slider-default: #ECF0FB;
+    --bg-light: #F9FAFF;
+
+}
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    height:100%;
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color:var(--light);
+    height: 100%;
+    background-color: var(--bg-light);
+    background-image: url(./images/bg-pattern.svg);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size:auto 50%;
+}
+
+/* background fix */
+
+/* 150% */
+
+/* @media(min-width:842px){
+    body{
+        background-size:100% auto;
+    } 
+} */
+
+/* 125% */
+
+/* @media(min-width:1010px){
+    body{
+        background-size:100% auto;
+    } 
+} */
+
+@media(min-width:1280px){
+  body{
+      background-size:100% auto;
+  }   
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:32px;
+    min-height: max-content;
+    min-height: 100vh;
+    padding-left:24px;
+    padding-right:24px;
+}
+
+.headline{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height:145px;
+    background-image: url(./images/pattern-circles.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.headline h1{
+    color:var(--dark);
+    font-weight: 800;
+    font-size: 20px; 
+    line-height: 27px;
+    margin-bottom:8px;
+}
+.headline p{ 
+    font-size: 13px;
+    line-height: 23px;
+}
+.card {
+    background-color: #FFF;
+    box-shadow:var(--card-shadow);
+    max-width: 420px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.card-container{
+    max-height:100%;
+    height: 478px; /* no need - just to check precision currentlly -1px without this */
+    padding-left:24px;
+    padding-right:24px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* can't give -margin to billing-container without this */
+}
+@media (min-width:768px) {
+    main{
+      gap:54px;
+      padding-left:unset;
+      padding-right:unset;
+  }
+  .headline{
+      height:145px;
+  }
+  .headline h1{
+    font-size: 28px;
+    line-height: 38px;
+    margin-bottom:12px;
+  }
+  .headline p{ 
+    font-size: 15px;
+    line-height: 20px; 
+  }
+  .headline br{
+    display:none;
+  }
+  .card {
+    max-width: 540px;
+  }
+  .card-container{
+    height: 397px; /* no need - just to check precision - currently pixel perfect*/
+    padding-left:48px;
+    padding-right:48px;
+  }
+}
+
+/* SLIDER - container */
+.slider-container{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:34px;
+  margin-bottom:34px;
+}
+
+.pageviews{
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 16px;
+  letter-spacing: 1.715px;
+  width:max-content;
+}
+
+/* SLIDER */
+.slider{
+  width:100%;
+  background: linear-gradient(to right,var(--light-green) 50%, var(--slider-default) 0%, var(--slider-default) 100% );
+  height:8px;
+  transition: background 400ms ease-in;
+  -webkit-appearance:none;
+  border-radius:5px;
+  margin-top:41px;
+  margin-bottom:40px;
+}
+.slider:focus {
+  outline: none;
+}
+.slider::-webkit-slider-thumb{
+  border: none;
+  cursor:pointer;
+  appearance: none;
+  height:40px;
+  width:40px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background-color:var(--green);
+  background-image: url(./images/icon-slider.svg);
+  background-position:center;
+  background-repeat:no-repeat;
+  box-shadow: 0px 15px 30px 0px rgba(0, 255, 231, 0.6);
+}
+.slider::-webkit-slider-thumb:hover{
+  background-color:var(--green-hover);
+}
+.slider::-webkit-slider-thumb:active{
+  background-color:var(--dark-green);
+  cursor:grabbing;
+}
+
+.slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: linear-gradient(to right,var(--light-green) 50%, var(--slider-default) 0%, var(--slider-default) 100% );
+  border-radius: 5px;
+}
+.slider::-moz-range-thumb {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color:var(--green);
+  background-image: url(./images/icon-slider.svg);
+  background-position:center;
+  background-repeat:no-repeat;
+  cursor: pointer;
+  border:none;
+  box-shadow: 0px 15px 30px 0px rgba(0, 255, 231, 0.6);
+
+}
+.slider::-moz-range-thumb:hover {
+  background-color:var(--green-hover);
+}
+.slider::-moz-range-thumb:active {
+  background-color:var(--dark-green);
+  cursor:grabbing;
+}
+
+.slider:-moz-focusring{
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+.slider:focus::-moz-range-track {
+  background: transparent;
+}
+
+.price-box{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+  line-height: 19px;
+}
+.price{
+  color:var(--dark);
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+  margin-right:10px;
+}
+
+@media (min-width:768px) {
+  .slider-container{
+    position:relative;
+    margin-top:40px;
+    margin-bottom:56px;
+  }
+  .slider{
+    margin-top:58px;
+    margin-bottom:unset;
+  }
+  .view-box{
+    align-self:flex-start;
+    margin-top:18px;
+  }
+  .pageviews{
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 2px;  
+    width:max-content;
+  }
+  .price-box{
+    position:absolute;
+    top:0;
+    right:0;
+  }
+  .price{ 
+    font-size: 40px;
+    line-height: 55px;
+    letter-spacing: -1px;
+    margin-right:8px;
+  }
+}
+
+/** BILLING **/
+.billing-container {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap:12px;
+  font-size: 12px;
+  line-height: 16px;
+  width:100%; 
+  margin-right:-26px; /* because of 'card-container' centering need to double -margin*/
+}
+.discount-box{
+  width:42px;
+  height:19px;
+  background:var(--light-peach); 
+  color:var(--peach);
+  vertical-align: center;
+  text-align: center;
+  border-radius: 10px;
+  margin-left:-7px;
+}
+.discount-box span{
+  font-weight: 800;
+  font-size: 10px;
+  line-height: 14px;
+}
+.discount{
+  display:none;
+}
+@media (min-width:480px) {
+  .billing-container{
+    margin-right:-36px;
+    justify-content: center;
+
+  }
+}
+@media (min-width:768px) {
+  .billing-container{
+    justify-content: flex-end;
+    /* again, need to double the amount of margin because of 'card-container' centering */
+    margin-right:34px;
+    gap:16px;
+  }
+  .discount-box{
+    width:80px;
+  }
+  .discount{
+    display:inline-block;
+  }
+}
+
+/* toggle */
+.switch-box{
+  display:flex;
+}
+.switch{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+.toggle {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 43px;
+	height: 22px;
+	background:#CFD8EF;
+	display: block;
+	border-radius: 12px;
+	position: relative;
+}
+.toggle:after {
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 14px;
+	height: 14px;
+	background: #FFF;
+	border-radius: 8px;
+	transition: 0.3s;
+}
+.switch:checked + .toggle {
+	background: var(--green-hover);
+}
+
+.switch:checked + .toggle:after {
+	left: calc(100% - 4px);
+	transform: translateX(-100%);
+}
+
+.toggle:active:after {
+	width: 23px;
+}
+
+/* separator line */
+hr{
+  border: 0;
+  height: 1px;
+  width:100%;
+  background: #ECF0FB;
+  margin-top:38px;
+  margin-bottom:24px;
+}
+/* OFFERS */
+.offers-box{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:32px;
+  margin-bottom:32px;/* just to check overall precision vertically. now it's -1px inside the card :)*/
+}
+.offers {
+  font-size: 12px;
+  line-height: 16px;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  gap:11px;
+}
+.offers div{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+.offers img{
+  margin-right:16px;
+}
+
+@media (min-width:768px) {
+  .offers-box{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap:unset;
+  }
+  .offers {
+    align-items: flex-start;
+  }
+  hr{
+    margin-top:40px;
+    margin-bottom:32px;
+  } 
+}
+
+/* BUTTON */
+/* reset button style */
+button {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
+button {
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none;
+      -moz-user-select: none;
+        -ms-user-select: none;
+}
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+.start{
+  background:var(--dark);
+  width:170px;
+  height:41px;
+  border-radius: 21px;
+  
+  color:#BECDFF;
+  font-weight: 800;
+  font-size: 12px; 
+  line-height: 16px;
+  text-align: center;
+  
+}
+.start:hover{
+  background:var(--green);
+  color:#FFF;
+  transition:0.4s; 
+}
+
